@@ -22,8 +22,7 @@ datModDate <- dat %>%
                              format = "%d/%m/%Y %H:%M:%S",
                              tz = "UTC"),
          .keep = 'all',
-         .after = Time) %>%
-  mutate(Date = as.Date(Date, '%d/%m/%Y'))
+         .after = Time)
 
 str(datModDate)
 
