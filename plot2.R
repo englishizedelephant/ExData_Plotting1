@@ -5,7 +5,11 @@ library(dplyr)
 library(readr)
 
 ## Read a dataset
-file <- "household_power_consumption.txt"
+fileUrl <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
+download.file(fileUrl, destfile = './data.zip', method = 'curl')
+zipfile <- "./data.zip"
+file <- unzip(zipfile)
+
 dat <- read.table(file, sep = ';',header = TRUE, na.strings = '?')
 
 ## Check the dataset
